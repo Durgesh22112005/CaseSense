@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-navy: #0f172a;
+  --gov-blue: #1d4ed8;
+  --gov-blue-dark: #1e40af;
+  --gov-blue-light: #eff6ff;
+  --gov-amber: #d97706;
+  --gov-green: #16a34a;
+  --gov-red: #dc2626;
+  --gov-border: #e2e8f0;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.glow-red {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15), 0 10px 30px rgba(239, 68, 68, 0.12);
+}
+
+.glow-blue {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(59, 130, 246, 0.12);
+}
+
+.pulse-dot {
+  animation: pulse-dot-anim 1.6s infinite;
+}
+
+@keyframes pulse-dot-anim {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Formal government print styling */
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
